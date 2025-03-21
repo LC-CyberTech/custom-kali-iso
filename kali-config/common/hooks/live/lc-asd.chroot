@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Set kali's password (just in case)
+echo "kali:kali" | chpasswd
+
+# Set up the chauncey user
+useradd -U -m chauncey
+echo "chauncey:beavers7911" | chpasswd
