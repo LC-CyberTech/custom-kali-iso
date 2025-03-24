@@ -31,10 +31,8 @@ jobs:
               chmod +x ./build.sh && \
               ./build.sh --verbose
             "
-
-      # Uncomment this if you want to save the build output after completion
       - name: Save output ISO to artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
            name: iso-output
            path: ./images/*
