@@ -1,8 +1,18 @@
 #!/bin/sh
 
+chmod a-rwx /etc/skel/start_here/.hidden4
+chmod a-rwx /etc/skel/start_here/.hidden8 
+
+useradd -U -m -s /bin/bash kali
+usermod -aG sudo kali
+
 # Set kali's password (just in case)
 echo "kali:kali" | chpasswd
 
+echo "alias ls='ls --color=auto --quoting-style=literal'" >> /home/kali/.bashrc
+echo "alias ls='ls --color=auto --quoting-style=literal'" >> /home/kali/.zshrc
+
 # Set up the chauncey user
-useradd -U -m chauncey
+useradd -U -m -s /bin/bash chauncey
 echo "chauncey:beavers7911" | chpasswd
+echo "beavers will rule the world" > /home/chauncey/user_flag.txt
